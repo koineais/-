@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>連絡先 — 学校将棋クラブ</title>
+  <style>
+    body{font-family: -apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,'Noto Sans JP',sans-serif;margin:0;background:#f7f7f9}
+    .container{max-width:900px;margin:0 auto;padding:1rem}
+    .site-header{background:#fff;border-bottom:1px solid #e6e6e6}
+    .site-header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .site-header h1{font-size:1.1rem;margin:0}
+    .site-header nav ul{list-style:none;padding:0;margin:0;display:flex;gap:1rem;flex-wrap:wrap}
+    .site-header a{text-decoration:none;color:#1f6feb}
+    main{background:#fff;border-radius:8px;margin:2rem 0}
+    input,textarea{padding:8px;font-size:1rem;width:100%;max-width:300px}
+    button{padding:8px 16px;background:#1f6feb;color:#fff;border:none;border-radius:4px;cursor:pointer}
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="container"><h1>学校将棋クラブ</h1><nav><ul><li><a href="index.html">ホーム</a></li><li><a href="rules.html">ルール</a></li><li><a href="board.html">盤</a></li><li><a href="ai.html">AI対戦</a></li><li><a href="puzzles.html">詰将棋</a></li><li><a href="about.html">部について</a></li></ul></nav></div></header>
+  <main class="container">
+    <h2>見学・入部の申し込み</h2>
+    <p>見学や入部希望は顧問の先生か以下のメールアドレスへご連絡ください。</p>
+    <p><strong>顧問メール：</strong><a href="mailto:shogi-advisor@example.com">shogi-advisor@example.com</a></p>
+    <h3>簡易フォーム</h3>
+    <form action="mailto:shogi-advisor@example.com" method="post" enctype="text/plain">
+      <label>名前<br><input type="text" name="name" required></label><br><br>
+      <label>学年<br><input type="text" name="grade"></label><br><br>
+      <label>メッセージ<br><br><textarea name="message" rows="6"></textarea></label><br><br>
+      <button type="submit">送信</button>
+    </form>
+  </main>
+  <footer style="text-align:center;color:#666;padding:1rem"><p>© 学校将棋クラブ</p></footer>
+</body>
+</html>

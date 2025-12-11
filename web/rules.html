@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>将棋ルール — 学校将棋クラブ</title>
+  <style>
+    body{font-family: -apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,'Noto Sans JP',sans-serif;margin:0;background:#f7f7f9;color:#222}
+    .container{max-width:900px;margin:0 auto;padding:1rem}
+    .site-header{background:#fff;border-bottom:1px solid #e6e6e6}
+    .site-header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .site-header h1{font-size:1.1rem;margin:0}
+    .site-header nav ul{list-style:none;padding:0;margin:0;display:flex;gap:1rem;flex-wrap:wrap}
+    .site-header a{text-decoration:none;color:#1f6feb}
+    main{background:#fff;border-radius:8px;margin:2rem 0;padding:2rem}
+    h2{border-bottom:2px solid #1f6feb;padding-bottom:.5rem;margin-top:2rem}
+    h2:first-child{margin-top:0}
+    .piece-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1rem 0}
+    .piece-card{background:#f9f9f9;padding:1rem;border-radius:6px;border-left:4px solid #1f6feb}
+    .piece-name{font-weight:700;font-size:1.1rem;margin-bottom:.5rem}
+    .piece-move{background:#fff;padding:.5rem;margin:.5rem 0;font-size:.9rem;font-family:monospace;border-radius:4px}
+    .rule-box{background:#fffbf0;padding:1rem;border-radius:6px;margin:1rem 0;border-left:4px solid #ff9500}
+    footer{text-align:center;color:#666;padding:1rem;border-top:1px solid #e6e6e6}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>学校将棋クラブ</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="rules.html">ルール</a></li>
+          <li><a href="board.html">盤</a></li>
+          <li><a href="ai.html">AI対戦</a></li>
+          <li><a href="puzzles.html">詰将棋</a></li>
+          <li><a href="about.html">部について</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>将棋ルール</h1>
+
+    <h2>基本ルール</h2>
+    <p>将棋は 9×9 マスの盤で、黒（先手）と白（後手）が交互に駒を動かしながら対局するゲームです。各プレイヤーは20枚の駒を持って開始します。</p>
+    <div class="rule-box">
+      <strong>目的：</strong>相手の玉（王様）を詰ますこと。玉が逃げられない状況を「詰み」といいます。</div>
+
+    <h2>駒の種類（20枚）</h2>
+    <ul>
+      <li>玉将・王将：各1枚</li>
+      <li>飛車・角行：各1枚</li>
+      <li>金将・銀将・桂馬・香車：各2枚</li>
+      <li>歩兵：9枚</li>
+    </ul>
+
+    <h2>駒の種類と動き方</h2>
+    <div class="piece-grid">
+      <div class="piece-card">
+        <div class="piece-name">♔ 玉（ぎょく）</div>
+        <p>全ての駒の中で最も大切です。玉が詰まされたら負けです。</p>
+        <div class="piece-move">全方向に 1マス</div>
+      </div>
+
+      <div class="piece-card">
+        <div class="piece-name">♖ 飛車（ひしゃ）</div>
+        <p>遠くまで動ける強い駒です。</p>
+        <div class="piece-move">上下左右に何マスでも（間に駒がなければ）</div>
+      </div>
+
+      <div class="piece-card">
+        <div class="piece-name">♗ 角（かく）</div>
+        <p>斜めに強い駒です。</p>
+        <div class="piece-move">斜めに何マスでも（間に駒がなければ）</div>
+      </div>
+
+      <div class="piece-card">
+        <div class="piece-name">♚ 金（きん）</div>
+        <p>バランスが良い駒です。</p>
+        <div class="piece-move">前方、左右、斜め後ろに 1マス</div>
+      </div>
+
+      <div class="piece-card">
+        <div class="piece-name">♛ 銀（ぎん）</div>
+        <p>斜めに強い駒です。</p>
+        <div class="piece-move">前方、斜め前、斜め後ろに 1マス</div>
+      </div>
+
+      <div class="piece-card">
+        <div class="piece-name">🐴 桂（けい）</div>
+        <p>独特な動きをする駒です。駒を飛び越えられます。</p>
+        <div class="piece-move">前方に 2マス進んで左右どちらかに 1マス</div>
+      </div>
+
+      <div class="piece-card">
+        <div class="piece-name">🔱 香（きょう）</div>
+        <p>前方に限られた駒です。</p>
+        <div class="piece-move">前方に何マスでも（間に駒がなければ）</div>
+      </div>
+
+      <div class="piece-card">
+        <div class="piece-name">♙ 歩（ふ）</div>
+        <p>最もたくさんある駒です。敵陣で成ります。</p>
+        <div class="piece-move">前方に 1マスだけ</div>
+      </div>
+    </div>
+
+    <h2>成り（なり）の仕組み</h2>
+    <p>敵陣（相手から見て3段目以内）に入った自分の駒（玉将・金将以外）は、裏返して「成る」ことができます。成ると駒の動き方が変わり、より強力になります。</p>
+    <div class="piece-grid">
+      <div class="piece-card">
+        <div class="piece-name">と（成歩）</div>
+        <div class="piece-move">金と同じ動き</div>
+      </div>
+      <div class="piece-card">
+        <div class="piece-name">成香</div>
+        <div class="piece-move">金と同じ動き</div>
+      </div>
+      <div class="piece-card">
+        <div class="piece-name">成桂</div>
+        <div class="piece-move">金と同じ動き</div>
+      </div>
+      <div class="piece-card">
+        <div class="piece-name">成銀</div>
+        <div class="piece-move">金と同じ動き</div>
+      </div>
+      <div class="piece-card">
+        <div class="piece-name">龍王（りゅうおう）</div>
+        <div class="piece-move">飛車の動き + 斜めも 1マス</div>
+      </div>
+      <div class="piece-card">
+        <div class="piece-name">龍馬（りゅうま）</div>
+        <div class="piece-move">角の動き + 上下左右も 1マス</div>
+      </div>
+    </div>
+
+    <h2>相手の駒の取り方</h2>
+    <p>自分の駒の移動先に相手の駒があった場合、その駒を盤上から取り除き、自分の「持ち駒」として手元に置くことができます。</p>
+
+    <h2>持ち駒の使い方（打つ）</h2>
+    <p>取った相手の駒は、自分の「持ち駒」として、次の自分の手番で盤上の空いているマスに配置（打つ）して使うことができます。</p>
+    
+    <h3>持ち駒の制限ルール</h3>
+    <div class="rule-box">
+      <strong>二歩（にふ）：</strong>同じ筋（縦の列）に自分の歩兵が 2 枚以上並ぶように打つことはできません。
+    </div>
+    <div class="rule-box">
+      <strong>打ち歩詰め（うちふづめ）：</strong>持ち駒の歩を打ってすぐに相手の玉将を詰ませることはできません。
+    </div>
+    <div class="rule-box">
+      <strong>行き場所のない駒：</strong>桂馬や香車など、その場所から一切動かせなくなるマスには打てません。
+    </div>
+
+    <h2>ゲームの流れ</h2>
+    <ol>
+      <li>盤に駒を初期配置します</li>
+      <li>黒（先手）がまず駒を動かします</li>
+      <li>白（後手）が駒を動かします</li>
+      <li>交互に動かしていきます</li>
+      <li>相手の玉を詰ませたら勝利です</li>
+    </ol>
+
+    <h2>勝敗の決め方</h2>
+    <p>相手の「玉将」を、次の手番でどう動かしても取れる状態（詰み）にした時点で勝利となります。</p>
+
+    <h2>反則行為</h2>
+    <p>以下のような行為は反則となり、対局に負けとなります：</p>
+    <ul>
+      <li><strong>二歩：</strong>同じ筋に歩が 2 枚以上並ぶように打つこと</li>
+      <li><strong>打ち歩詰め：</strong>持ち駒の歩を打ってすぐに相手の玉を詰ませること</li>
+      <li><strong>動かせない駒の配置：</strong>配置した後に一切動けない場所に駒を打つこと</li>
+      <li><strong>王手放置：</strong>王手されているのに玉を逃がさないこと</li>
+      <li><strong>千日手：</strong>同じ局面が繰り返される（連続王手の千日手など）</li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>© 学校将棋クラブ</p>
+  </footer>
+</body>
+</html>
